@@ -1,3 +1,4 @@
+/*
 package br.com.dionataferraz.jarvis
 
 import android.os.Bundle
@@ -5,7 +6,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -28,7 +30,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import br.com.dionataferraz.jarvis.ui.theme.JarvisTheme
-import br.com.dionataferraz.jarvis.ui.theme.Purple400
 
 //import br.com.dionataferraz.jarvis.ui.theme.Navigation3
 
@@ -43,6 +44,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreenView() {
     val navController = rememberNavController()
@@ -57,7 +59,9 @@ fun MainScreenView() {
     }
 }
 
-/* https://stackoverflow.com/questions/71054138/jetpack-compose-inner-shadow */
+*/
+/* https://stackoverflow.com/questions/71054138/jetpack-compose-inner-shadow *//*
+
 fun Modifier.innerShadow() = composed(
     inspectorInfo = {
 
@@ -143,12 +147,13 @@ fun BottomNavigation(navController: NavController) {
         BottomNavItem.Home,
         BottomNavItem.Favorite,
     )
-    BottomNavigation(
+    NavigationBar(
         // or NavigationBar
-        contentColor = Purple400,
-        backgroundColor = Color.White,
-        elevation = 0.dp,
+        contentColor = Color.Unspecified,
+        containerColor = Color.White,
         modifier = Modifier
+            .wrapContentHeight()
+            .height(IntrinsicSize.Min)
             .wrapContentWidth(align = Alignment.CenterHorizontally)
             .width(IntrinsicSize.Min)
             .innerShadow()
@@ -200,6 +205,7 @@ fun NavigationGraph(navController: NavHostController) {
 }
 
 sealed class BottomNavItem(var title: String, var icon: Int, var screen_route: String) {
-    object Home : BottomNavItem("Home", android.R.drawable.arrow_down_float, "home")
+    object Home : BottomNavItem("Home", R.drawable.ic_navigation_home, "home")
     object Favorite : BottomNavItem("Favorite", android.R.drawable.arrow_down_float, "favorite")
 }
+*/
