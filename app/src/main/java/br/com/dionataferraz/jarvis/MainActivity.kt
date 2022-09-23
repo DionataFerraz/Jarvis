@@ -29,6 +29,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import br.com.dionataferraz.jarvis.ui.theme.JarvisTheme
 import br.com.dionataferraz.jarvis.ui.theme.Purple400
+import br.com.jarvis.home.view.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
