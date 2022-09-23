@@ -30,8 +30,6 @@ import androidx.navigation.compose.rememberNavController
 import br.com.dionataferraz.jarvis.ui.theme.JarvisTheme
 import br.com.dionataferraz.jarvis.ui.theme.Purple400
 
-//import br.com.dionataferraz.jarvis.ui.theme.Navigation3
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
