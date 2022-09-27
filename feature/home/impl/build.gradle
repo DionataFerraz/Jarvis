@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-
 }
 
 android {
@@ -27,24 +26,20 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.kotlinCompiler
     }
     buildFeatures {
         compose true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.0.1'
-        kotlinCompilerVersion '1.5.21'
-    }
 }
 
 dependencies {
+    implementation Libs.composeUi
+    implementation Libs.composeUiToolingPreview
+    implementation Libs.composeMaterial3
+    implementation Libs.androidxActivityCompose
 
-    def compose_version = '1.0.1'
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.compose.material3:material3:1.0.0-alpha01'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version" // to preview
+    debugImplementation Libs.composeUiTooling
 }
