@@ -6,5 +6,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Jarvis"
-include ':app'
-include ':feature:home:impl'
+
+apply from: 'modules.gradle'

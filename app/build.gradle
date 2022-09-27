@@ -66,5 +66,5 @@ dependencies {
     androidTestImplementation Libs.androidxTestEspresso
     testImplementation Libs.junitCore
 
-    implementation project(":feature:home:impl")
+    implementation project(Modules.homeImpl)
 }
