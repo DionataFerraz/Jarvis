@@ -1,4 +1,4 @@
-package br.com.dionataferraz.jarvis
+package br.com.jarvis.home.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import br.com.jarvis.home.view.HomeScreen
@@ -12,9 +12,4 @@ class HomeNavigatorImpl @Inject constructor() : HomeNavigator {
     override fun ShowHomeScreen() {
         HomeScreen()
     }
-}
-
-interface HomeNavigator {
-    @Composable
-    fun ShowHomeScreen()
 }

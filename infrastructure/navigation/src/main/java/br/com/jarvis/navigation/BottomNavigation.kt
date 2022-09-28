@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.BottomNavigation
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,21 +15,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import br.com.jarvis.navigation.extensions.innerShadow
 
-@Preview
 @Composable
-fun BottomNavigation(navController: NavController) {
+fun BottomBarNavigation(navController: NavController) {
     val items = listOf(
         BottomNavItem.Home,
         BottomNavItem.Favorite,
     )
-    androidx.compose.material.BottomNavigation(
+    BottomNavigation(
         // or NavigationBar
         contentColor = Color(0xFF4C1064)/*Purple400*/,
         backgroundColor = Color.White,

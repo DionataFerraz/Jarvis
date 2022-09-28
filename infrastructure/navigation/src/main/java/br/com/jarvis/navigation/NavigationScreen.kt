@@ -16,7 +16,7 @@ fun NavigationScreen() {
     Scaffold(
         bottomBar = {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-                BottomNavigation(navController = navController)
+                BottomBarNavigation(navController = navController)
             }
         }
     ) {

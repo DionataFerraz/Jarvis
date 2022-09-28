@@ -71,6 +71,7 @@ dependencies {
     kapt Libs.daggerCompiler
 
     implementation project(Modules.homeImpl)
+    implementation project(Modules.homePublic)
     implementation project(Modules.infrastructureScopes)
     implementation project(Modules.infrastructureNavigation)
 }

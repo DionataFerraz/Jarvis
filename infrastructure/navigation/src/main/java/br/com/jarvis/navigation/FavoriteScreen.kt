@@ -1,4 +1,4 @@
-package br.com.dionataferraz.jarvis
+package br.com.jarvis.navigation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
