@@ -30,6 +30,9 @@ import androidx.navigation.compose.rememberNavController
 import br.com.dionataferraz.jarvis.ui.theme.JarvisTheme
 import br.com.dionataferraz.jarvis.ui.theme.Purple400
 import br.com.jarvis.home.view.HomeScreen
+import br.com.jarvis.scopes.AppScope
+import br.com.jarvis.scopes.ComponentHolder
+import com.squareup.anvil.annotations.ContributesTo
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -198,7 +201,7 @@ fun NavigationGraph(navController: NavHostController) {
     }
 }
 
-sealed class BottomNavItem(var title: String, var icon: Int, var screen_route: String) {
+sealed class BottomNavItem(val title: String, val icon: Int, val screen_route: String) {
     object Home : BottomNavItem("Home", R.drawable.ic_navigation_home, "home")
     object Favorite : BottomNavItem("Favorite", android.R.drawable.arrow_down_float, "favorite")
 }

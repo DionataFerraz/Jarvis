@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'com.squareup.anvil' version '2.4.2'
 }
 
 android {
@@ -43,6 +45,9 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    anvil {
+        generateDaggerFactories = true
+    }
 }
 
 dependencies {
@@ -66,5 +71,9 @@ dependencies {
     androidTestImplementation Libs.androidxTestEspresso
     testImplementation Libs.junitCore
 
+    implementation Libs.daggerCore
+    kapt Libs.daggerCompiler
+
     implementation project(Modules.homeImpl)
+    implementation project(Modules.infrastructureScopes)
 }
