@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'org.jetbrains.kotlin.kapt'
     id 'com.squareup.anvil' version '2.4.2'
@@ -9,16 +9,11 @@ android {
     compileSdk Versions.compileSdk
 
     defaultConfig {
-        applicationId ApplicationId.id
         minSdk Versions.minSdk
         targetSdk Versions.targetSdk
-        versionCode Releases.versionCode
-        versionName Releases.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -34,43 +29,33 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
     composeOptions {
         kotlinCompilerExtensionVersion Versions.kotlinCompiler
     }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
+    buildFeatures {
+        compose true
     }
+
     anvil {
         generateDaggerFactories = true
     }
 }
 
 dependencies {
-    implementation Libs.androidxKtx
-
     implementation Libs.composeUi
+    implementation Libs.composeUiToolingPreview
     implementation Libs.composeMaterial
     implementation Libs.composeMaterial3
-    implementation Libs.composeUiToolingPreview
-    implementation Libs.androidxActivityCompose
 
-    debugImplementation Libs.composeUiTooling
-    debugImplementation Libs.composeUiTestManifest
-
-    androidTestImplementation Libs.composeUiTest
-    androidTestImplementation Libs.androidxTestExt
-    androidTestImplementation Libs.androidxTestEspresso
-    testImplementation Libs.junitCore
+    implementation Libs.navigationUiKtx
+    implementation Libs.navigationFragmentKtx
+    implementation Libs.navigationCompose
 
     implementation Libs.daggerCore
     kapt Libs.daggerCompiler
 
+    debugImplementation Libs.composeUiTooling
+
     implementation project(Modules.homeImpl)
     implementation project(Modules.infrastructureScopes)
-    implementation project(Modules.infrastructureNavigation)
 }
