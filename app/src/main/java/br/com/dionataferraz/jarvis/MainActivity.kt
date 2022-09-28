@@ -29,7 +29,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import br.com.dionataferraz.jarvis.ui.theme.JarvisTheme
 import br.com.dionataferraz.jarvis.ui.theme.Purple400
-import br.com.jarvis.home.view.HomeScreen
 import br.com.jarvis.scopes.AppScope
 import br.com.jarvis.scopes.ComponentHolder
 import com.squareup.anvil.annotations.ContributesTo
@@ -189,11 +188,16 @@ fun BottomNavigation(navController: NavController) {
     }
 }
 
+@ContributesTo(AppScope::class)
+interface NavigatorComponent {
+    fun homeNavigator(): HomeNavigator
+}
+
 @Composable
 fun NavigationGraph(navController: NavHostController) {
     NavHost(navController, startDestination = BottomNavItem.Home.screen_route) {
         composable(BottomNavItem.Home.screen_route) {
-            HomeScreen()
+            ComponentHolder.component<NavigatorComponent>().homeNavigator().ShowHomeScreen()
         }
         composable(BottomNavItem.Favorite.screen_route) {
             FavoriteScreen()
