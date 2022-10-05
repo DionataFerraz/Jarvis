@@ -1,4 +1,4 @@
-package br.com.jarvis.home.view
+package br.com.jarvis.home.presentation.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -39,43 +39,14 @@ private fun HomeList(names: List<String> = List(12) { "$it" }) {
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(items = names) { name ->
-            BookCard(name = name)
+            BookCard()
         }
     }
 }
 
-/*@Composable
-private fun BookCard(name: String) {
-    Card(
-        shape = RoundedCornerShape(20.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-        modifier = Modifier
-            .padding(vertical = 0.dp, horizontal = 0.dp)
-            .aspectRatio(0.75f)
-            .width(IntrinsicSize.Max)
-            .graphicsLayer {
-                shape = RoundedCornerShape(20.dp)
-                shadowElevation = 20f
-                spotShadowColor = Color.Black
-            },
-
-        ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .height(IntrinsicSize.Max)
-                .width(IntrinsicSize.Max)
-
-        ) {
-            Text(text = "HomeScreen $name")
-        }
-    }
-}*/
-
 @Composable
-private fun BookCard(name: String) {
-
-    Column() {
+private fun BookCard() {
+    Column {
         Box(
             contentAlignment = Alignment.TopEnd,
         ) {
@@ -102,21 +73,6 @@ private fun BookCard(name: String) {
                     painter = painterResource(R.drawable.dragon_ball_z),
                     contentDescription = "",
                 )
-                /*Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .height(IntrinsicSize.Max)
-                        .width(IntrinsicSize.Max)
-
-                ) {
-                    Image(
-                        modifier = Modifier
-                            .height(IntrinsicSize.Max)
-                            .width(IntrinsicSize.Max),
-                        painter = painterResource(R.drawable.dragon_ball_z),
-                        contentDescription = "",
-                    )
-                }*/
             }
             Image(
                 modifier = Modifier.padding(vertical = 0.dp, horizontal = 18.dp),

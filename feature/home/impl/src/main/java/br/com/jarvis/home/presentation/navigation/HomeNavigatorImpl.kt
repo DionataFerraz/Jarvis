@@ -1,7 +1,7 @@
 package br.com.jarvis.home.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import br.com.jarvis.home.view.HomeScreen
+import br.com.jarvis.home.presentation.view.HomeScreen
 import br.com.jarvis.scopes.AppScope
 import com.squareup.anvil.annotations.ContributesBinding
 import javax.inject.Inject

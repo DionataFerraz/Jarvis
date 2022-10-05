@@ -43,6 +43,7 @@ android {
 dependencies {
     implementation Libs.composeUi
     implementation Libs.composeUiToolingPreview
+    implementation Libs.composeMaterial
     implementation Libs.composeMaterial3
     implementation Libs.androidxActivityCompose
 
