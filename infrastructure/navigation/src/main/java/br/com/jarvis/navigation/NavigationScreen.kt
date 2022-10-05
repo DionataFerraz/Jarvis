@@ -20,8 +20,6 @@ fun NavigationScreen() {
             }
         }
     ) {
-
+        NavigationGraph(navController = navController)
     }
-
-    NavigationGraph(navController = navController)
 }

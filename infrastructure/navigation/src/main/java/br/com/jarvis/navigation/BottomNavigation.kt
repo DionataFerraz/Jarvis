@@ -45,8 +45,17 @@ fun BottomBarNavigation(navController: NavController) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         items.forEach { item ->
+            val isSelected =  currentRoute == item.screenRoute
+            val iconSelected =  if (isSelected) {
+                item.selectedIcon
+            } else {
+                item.icon
+            }
+
             BottomNavigationItem(
-                icon = { Icon(painterResource(id = item.icon), contentDescription = item.title) },
+                selectedContentColor = Color(0xFF4C1064),
+                unselectedContentColor = Color(0xFFFFBA49),
+                icon = { Icon(painterResource(id = iconSelected), contentDescription = item.title) },
                 label = {
                     Text(
                         text = item.title,
@@ -54,9 +63,9 @@ fun BottomBarNavigation(navController: NavController) {
                     )
                 },
                 alwaysShowLabel = true,
-                selected = currentRoute == item.screen_route,
+                selected = isSelected,
                 onClick = {
-                    navController.navigate(item.screen_route) {
+                    navController.navigate(item.screenRoute) {
                         navController.graph.startDestinationRoute?.let { screen_route ->
                             popUpTo(screen_route) {
                                 saveState = true

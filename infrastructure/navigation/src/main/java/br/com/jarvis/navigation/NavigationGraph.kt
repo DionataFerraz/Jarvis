@@ -9,11 +9,11 @@ import br.com.jarvis.scopes.ComponentHolder
 
 @Composable
 fun NavigationGraph(navController: NavHostController) {
-    NavHost(navController, startDestination = BottomNavItem.Home.screen_route) {
-        composable(BottomNavItem.Home.screen_route) {
+    NavHost(navController, startDestination = BottomNavItem.Home.screenRoute) {
+        composable(BottomNavItem.Home.screenRoute) {
             ComponentHolder.component<NavigatorComponent>().homeNavigator().ShowHomeScreen()
         }
-        composable(BottomNavItem.Favorite.screen_route) {
+        composable(BottomNavItem.Favorite.screenRoute) {
             FavoriteScreen()
         }
     }
